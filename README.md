@@ -34,7 +34,7 @@ Following the 2024 season the common sentiment was that Pablo Lopez’s sweepe w
 
 ## Advertising Cost of Living Improvements Through Childcare Costs
 
-[View the Advertising Cost of Living Improvements Through Childcare Costs directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Advertising Cost of Living Improvements Through Childcare Costs)
+[View the Advertising Cost of Living Improvements Through Childcare Costs directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Advertising-Cost-of-Living-Improvements-Through-Childcare-Costs)
 
 This project displays visualization skills and the ability to tell a story through data. In this project we evaluate the cost of living across the country and use visualizations to both identify and advertise to family’s why they should move to a different market for a better quality of life.
 
