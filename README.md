@@ -37,6 +37,7 @@ Following the 2024 season the common sentiment was that Pablo Lopez’s sweepe w
 This project displays visualization skills and the ability to tell a story through data. In this project we evaluate the cost of living across the country and use visualizations to both identify and advertise to family’s why they should move to a different market for a better quality of life.
 
 ## Evaluating Winners and Losers of the MLB Trade Deadline
+
 https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline
 
 This project seeks to provide a data backed approach to determine which teams received a better value in the 2025 MLB trade deadline. This was achieved through the training of a machine learning model to predict future player wins above replacement comparing the return for each team involved in the trade.
