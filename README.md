@@ -40,7 +40,6 @@ This project displays visualization skills and the ability to tell a story throu
 
 [View the Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline)
 
-https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline
 
 This project seeks to provide a data backed approach to determine which teams received a better value in the 2025 MLB trade deadline. This was achieved through the training of a machine learning model to predict future player wins above replacement comparing the return for each team involved in the trade.
 
