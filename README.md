@@ -8,10 +8,10 @@ Analytical and results-driven Data Science professional with expertise in data m
 Skilled in data visualization and reporting. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Developed and deployed several machine learning and AI models to guide strategic decisions and improve business performance. Passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
 
 ## Skills
-### Programing: Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
-### Data Science: Data Manipulation and Wrangling, Statistical Analysis, Data Visualization, Machine Learning and AI, API Integration, Data Pipelines, A/B Testing, NLP, Time Series Analysis.
-### Database: Skilled in Database Design, Normalization, Data Warehousing and ETL; experienced in integrating with cloud platforms such as AWS (S3 & RDS) and Azure.
-### Software: Certified in Microsoft Office Suite and Access; skilled in Visual Studio, Power BI, Power Pivot JMP, Minitab, Tableau, SPSS Modeler, Visio and Microsoft Project.
+**Programing:** Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
+**Data Science:** Data Manipulation and Wrangling, Statistical Analysis, Data Visualization, Machine Learning and AI, API Integration, Data Pipelines, A/B Testing, NLP, Time Series Analysis.
+**Database:** Skilled in Database Design, Normalization, Data Warehousing and ETL; experienced in integrating with cloud platforms such as AWS (S3 & RDS) and Azure.
+**Software:** Certified in Microsoft Office Suite and Access; skilled in Visual Studio, Power BI, Power Pivot JMP, Minitab, Tableau, SPSS Modeler, Visio and Microsoft Project.
 
 ## Education 
 ### Bellevue University, Omaha, NE (June 2023 - November 2025) 
