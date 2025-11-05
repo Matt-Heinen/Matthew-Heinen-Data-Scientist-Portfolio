@@ -1,6 +1,21 @@
 # Matthew-Heinen-Data-Scientist-Portfolio
 A collection of data science projects highlighting Heinen's end to end Data Science Skillset
 
+# About
+
+Analytical and results-driven Data Science professional with expertise in Python, SQL, and R for data manipulation, statistical modeling, and machine learning. Currently serving as a Technical Operations Support Specialist at OnePass Solutions, leading data initiatives that have uncovered over $6 million in potential savings. Experienced in evaluating product performance across multiple databases and external data sources, integrating data from AWS (S3 & RDS) and Azure environments to deliver reliable insights.
+
+Skilled in data visualization and reporting using Power BI, Tableau, and Excel, as well as advanced techniques such as time series analysis, NLP, and A/B testing. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Developed and deployed a price elasticity machine learning model to guide strategic pricing decisions and improve business performance. Passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
+
+## Education 
+Bellevue University, Omaha, NE (June 2023 - November 2025) 
+Master of Science – Data Science
+● ECHL Scholarship Recipient
+University of Denver, Denver, CO (September 2015 - June 2019) 
+Bachelors of Science Business Administration – Business Information and Analytics
+● Honors: Magna Cum Laude, Overall GPA: 3.93 ● Minor in Accounting, Chancellor’s Scholar
+
+[View My Resume](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Matt Heinen Resume.pdf)
 
 # Projects Included:
 
