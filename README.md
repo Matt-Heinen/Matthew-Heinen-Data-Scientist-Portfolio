@@ -1,6 +1,8 @@
 # Matthew-Heinen-Data-Scientist-Portfolio
 A collection of data science projects highlighting Heinen's end to end Data Science Skillset
 
+# Contact
+
 # About
 
 Analytical and results-driven Data Science professional with expertise in data manipulation, statistical modeling, and machine learning. Currently serving as a Technical Operations Support Specialist at OnePass Solutions, leading data initiatives that have uncovered over $6 million in potential savings. Experienced in evaluating product performance across multiple databases and external data sources, integrating data from AWS (S3 & RDS) and Azure environments to deliver reliable actionable insights.
