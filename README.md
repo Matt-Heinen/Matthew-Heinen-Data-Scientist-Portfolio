@@ -8,19 +8,19 @@ Analytical and results-driven Data Science professional with expertise in data m
 Skilled in data visualization and reporting. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Developed and deployed several machine learning and AI models to guide strategic decisions and improve business performance. Passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
 
 ## Skills
-Programing: Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
-Data Science: Data Manipulation and Wrangling, Statistical Analysis, Data Visualization, Machine Learning and AI, API Integration, Data Pipelines, A/B Testing, NLP, Time Series Analysis.
-Database: Skilled in Database Design, Normalization, Data Warehousing and ETL; experienced in integrating with cloud platforms such as AWS (S3 & RDS) and Azure.
-Software: Certified in Microsoft Office Suite and Access; skilled in Visual Studio, Power BI, Power Pivot JMP, Minitab, Tableau, SPSS Modeler, Visio and Microsoft Project.
+### Programing: Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
+### Data Science: Data Manipulation and Wrangling, Statistical Analysis, Data Visualization, Machine Learning and AI, API Integration, Data Pipelines, A/B Testing, NLP, Time Series Analysis.
+### Database: Skilled in Database Design, Normalization, Data Warehousing and ETL; experienced in integrating with cloud platforms such as AWS (S3 & RDS) and Azure.
+### Software: Certified in Microsoft Office Suite and Access; skilled in Visual Studio, Power BI, Power Pivot JMP, Minitab, Tableau, SPSS Modeler, Visio and Microsoft Project.
 
 ## Education 
-Bellevue University, Omaha, NE (June 2023 - November 2025) 
+### Bellevue University, Omaha, NE (June 2023 - November 2025) 
 
 Master of Science – Data Science
 
 ● ECHL Scholarship Recipient
 
-University of Denver, Denver, CO (September 2015 - June 2019) 
+### University of Denver, Denver, CO (September 2015 - June 2019) 
 
 Bachelors of Science Business Administration – Business Information and Analytics
 
@@ -30,7 +30,7 @@ Bachelors of Science Business Administration – Business Information and Analyt
 
 ## Selected Experience
 
-OnePass, Minneapolis, MN (July 2025 - Present)
+### OnePass, Minneapolis, MN (July 2025 - Present)
 
 Technical Operations and Support Specialist
 
@@ -40,7 +40,7 @@ Technical Operations and Support Specialist
 
 ● Automate maitnance tasks, improving the member experience and reducing customer support needs by thousands of hours monthly. 
 
-Employee Strategies, Minneapolis, MN (Jan 2024 – July 2025)
+### Employee Strategies, Minneapolis, MN (Jan 2024 – July 2025)
 
 Independent Data Science Consultant 
 
@@ -51,7 +51,7 @@ visualizations.
 
 Thrivent Financial, Minneapolis, MN (June 2018-July 2019)
 
-Data Analytics Consultant
+### Data Analytics Consultant
 
 ● Automate member submission process saving an estimated 1000 hours of data entry annually.
 
