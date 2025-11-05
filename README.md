@@ -9,8 +9,11 @@ Skilled in data visualization and reporting. Proficient in database design, ETL 
 
 ## Skills
 **Programing:** Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
+
 **Data Science:** Data Manipulation and Wrangling, Statistical Analysis, Data Visualization, Machine Learning and AI, API Integration, Data Pipelines, A/B Testing, NLP, Time Series Analysis.
+
 **Database:** Skilled in Database Design, Normalization, Data Warehousing and ETL; experienced in integrating with cloud platforms such as AWS (S3 & RDS) and Azure.
+
 **Software:** Certified in Microsoft Office Suite and Access; skilled in Visual Studio, Power BI, Power Pivot JMP, Minitab, Tableau, SPSS Modeler, Visio and Microsoft Project.
 
 ## Education 
