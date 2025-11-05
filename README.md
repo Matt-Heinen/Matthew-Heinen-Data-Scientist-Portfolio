@@ -15,10 +15,15 @@ Software: Certified in Microsoft Office Suite and Access; skilled in Visual Stud
 
 ## Education 
 Bellevue University, Omaha, NE (June 2023 - November 2025) 
+
 Master of Science – Data Science
+
 ● ECHL Scholarship Recipient
+
 University of Denver, Denver, CO (September 2015 - June 2019) 
+
 Bachelors of Science Business Administration – Business Information and Analytics
+
 ● Honors: Magna Cum Laude, Overall GPA: 3.93 ● Minor in Accounting, Chancellor’s Scholar
 
 [View My Resume](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Matt-Heinen-Resume.pdf)
@@ -36,14 +41,22 @@ Technical Operations and Support Specialist
 ● Automate maitnance tasks, improving the member experience and reducing customer support needs by thousands of hours monthly. 
 
 Employee Strategies, Minneapolis, MN (Jan 2024 – July 2025)
+
 Independent Data Science Consultant 
-● Sourced and integrated data from external and internal sources to build predictive models, generate actionable insights, and create dynamic visualizations.
+
+● Sourced and integrated data from external and internal sources to build predictive models, generate actionable insights, and create dynamic 
+visualizations.
+
 ● Evaluated nearly 4,000 data visualizations and insights for accuracy, clarity, and readability; recommended more effective data visualization tactics to improve communication and decision making.
 
 Thrivent Financial, Minneapolis, MN (June 2018-July 2019)
+
 Data Analytics Consultant
+
 ● Automate member submission process saving an estimated 1000 hours of data entry annually.
+
 ● Develop and implement a digital analytics strategy for departments web space, providing insight on user engagement. 
+
 ● Automate quarterly reporting dashboards, streamlining analysis and saving 6 hours of executive time quarterly.
 
 # Projects Included:
