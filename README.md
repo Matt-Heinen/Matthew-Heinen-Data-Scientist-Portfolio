@@ -25,10 +25,14 @@ Bachelors of Science Business Administration – Business Information and Analyt
 
 ## Selected Experience
 
-OnePass Minneapolis, MN (July 2025 - Present)
+OnePass, Minneapolis, MN (July 2025 - Present)
+
 Technical Operations and Support Specialist
+
 ● Sourced and integrated data from external and internal sources to build models, generate actionable insights, and create dynamic visualizations.
+
 ● Used SQL and API expertise to provide immediate member resolution to product defects for hundreds of members. 
+
 ● Automate maitnance tasks, improving the member experience and reducing customer support needs by thousands of hours monthly. 
 
 Employee Strategies, Minneapolis, MN (Jan 2024 – July 2025)
