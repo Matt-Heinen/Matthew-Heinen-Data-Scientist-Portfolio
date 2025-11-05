@@ -15,7 +15,7 @@ University of Denver, Denver, CO (September 2015 - June 2019)
 Bachelors of Science Business Administration – Business Information and Analytics
 ● Honors: Magna Cum Laude, Overall GPA: 3.93 ● Minor in Accounting, Chancellor’s Scholar
 
-[View My Resume](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Matt Heinen Resume.pdf)
+[View My Resume](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Matt-Heinen-Resume.pdf)
 
 # Projects Included:
 
