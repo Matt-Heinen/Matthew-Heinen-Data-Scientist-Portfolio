@@ -3,9 +3,15 @@ A collection of data science projects highlighting Heinen's end to end Data Scie
 
 # About
 
-Analytical and results-driven Data Science professional with expertise in Python, SQL, and R for data manipulation, statistical modeling, and machine learning. Currently serving as a Technical Operations Support Specialist at OnePass Solutions, leading data initiatives that have uncovered over $6 million in potential savings. Experienced in evaluating product performance across multiple databases and external data sources, integrating data from AWS (S3 & RDS) and Azure environments to deliver reliable insights.
+Analytical and results-driven Data Science professional with expertise in data manipulation, statistical modeling, and machine learning. Currently serving as a Technical Operations Support Specialist at OnePass Solutions, leading data initiatives that have uncovered over $6 million in potential savings. Experienced in evaluating product performance across multiple databases and external data sources, integrating data from AWS (S3 & RDS) and Azure environments to deliver reliable actionable insights.
 
-Skilled in data visualization and reporting using Power BI, Tableau, and Excel, as well as advanced techniques such as time series analysis, NLP, and A/B testing. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Developed and deployed a price elasticity machine learning model to guide strategic pricing decisions and improve business performance. Passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
+Skilled in data visualization and reporting. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Developed and deployed several machine learning and AI models to guide strategic decisions and improve business performance. Passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
+
+## Skills
+Programing: Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
+Data Science: Data Manipulation and Wrangling, Statistical Analysis, Data Visualization, Machine Learning and AI, API Integration, Data Pipelines, A/B Testing, NLP, Time Series Analysis.
+Database: Skilled in Database Design, Normalization, Data Warehousing and ETL; experienced in integrating with cloud platforms such as AWS (S3 & RDS) and Azure.
+Software: Certified in Microsoft Office Suite and Access; skilled in Visual Studio, Power BI, Power Pivot JMP, Minitab, Tableau, SPSS Modeler, Visio and Microsoft Project.
 
 ## Education 
 Bellevue University, Omaha, NE (June 2023 - November 2025) 
@@ -16,6 +22,25 @@ Bachelors of Science Business Administration – Business Information and Analyt
 ● Honors: Magna Cum Laude, Overall GPA: 3.93 ● Minor in Accounting, Chancellor’s Scholar
 
 [View My Resume](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Matt-Heinen-Resume.pdf)
+
+## Selected Experience
+
+OnePass Minneapolis, MN (July 2025 - Present)
+Technical Operations and Support Specialist
+● Sourced and integrated data from external and internal sources to build models, generate actionable insights, and create dynamic visualizations.
+● Used SQL and API expertise to provide immediate member resolution to product defects for hundreds of members. 
+● Automate maitnance tasks, improving the member experience and reducing customer support needs by thousands of hours monthly. 
+
+Employee Strategies, Minneapolis, MN (Jan 2024 – July 2025)
+Independent Data Science Consultant 
+● Sourced and integrated data from external and internal sources to build predictive models, generate actionable insights, and create dynamic visualizations.
+● Evaluated nearly 4,000 data visualizations and insights for accuracy, clarity, and readability; recommended more effective data visualization tactics to improve communication and decision making.
+
+Thrivent Financial, Minneapolis, MN (June 2018-July 2019)
+Data Analytics Consultant
+● Automate member submission process saving an estimated 1000 hours of data entry annually.
+● Develop and implement a digital analytics strategy for departments web space, providing insight on user engagement. 
+● Automate quarterly reporting dashboards, streamlining analysis and saving 6 hours of executive time quarterly.
 
 # Projects Included:
 
