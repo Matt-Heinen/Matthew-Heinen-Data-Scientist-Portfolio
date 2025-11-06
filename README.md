@@ -3,6 +3,13 @@ A collection of data science projects highlighting Heinen's end to end Data Scie
 
 # Contact
 
+Interested in collaborating or discussing data-driven solutions?  
+Feel free to reach out — I’d love to connect!  
+
+- 📧 **Email:** mjheinen@my365.bellevue.edu  
+- 💼 **LinkedIn:** [Matthew Heinen](https://www.linkedin.com/in/Matthew-Heinen-a29611106)  
+- 📍 **Based in:** Minneapolis, MN
+  
 # About
 
 Analytical and results-driven Data Science professional with expertise in data manipulation, statistical modeling, and machine learning. Currently serving as a Technical Operations Support Specialist at OnePass Solutions, leading data initiatives that have uncovered over $6 million in potential savings. Experienced in evaluating product performance across multiple databases and external data sources, integrating data from AWS (S3 & RDS) and Azure environments to deliver reliable actionable insights.
