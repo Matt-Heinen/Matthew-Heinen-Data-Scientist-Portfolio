@@ -12,9 +12,11 @@ Feel free to reach out — I’d love to connect!
   
 # About
 
-Analytical and results-driven Data Science professional with expertise in data manipulation, statistical modeling, and machine learning. Currently serving as a Technical Operations Support Specialist at OnePass Solutions, leading data initiatives that have uncovered over $6 million in potential savings. Experienced in evaluating product performance across multiple databases and external data sources, integrating data from AWS (S3 & RDS) and Azure environments to deliver reliable actionable insights.
+Analytical and results-driven Data Science professional with expertise in data manipulation, statistical modeling, and machine learning. I currently serve as a Technical Operations Support Specialist at OnePass Solutions, Leading various ad hoc Data Science projects delivering actionable insights.
 
-Skilled in data visualization and reporting. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Developed and deployed several machine learning and AI models to guide strategic decisions and improve business performance. Passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
+Skilled in data visualization and reporting. Proficient in database design, ETL processes, and API integration, with a strong foundation in data warehousing and cloud-based analytics. Professionally I have developed and deployed several machine learning and AI models to guide strategic decisions and improve business performance. I am passionate about combining technical expertise with business acumen to transform data into actionable intelligence that drives efficiency and measurable impact.
+
+Previously a Professional Hockey Referee, recognized among the top eight American internationally licensed officials worldwide. Known for exceptional communication, composure, and precision in high-stress, fast-paced environments. My career was defined by attention to detail, integrity, and an unwavering commitment to excellence across professional and international competition.
 
 ## Skills
 **Programing:** Python, SQL, R, Visual Basic, VBA, HTML, CSS, ASP, ADO, DAX.
