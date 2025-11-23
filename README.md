@@ -81,6 +81,8 @@ This project takes a data backed approach to investigating the true effect on so
 
 ## Weather Retrieval Application
 
+[View the Weather-Retreval-App directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Weather-Retreval-App)
+
 This program uses python programming to build an application that uses a collection of API calls to retrieve pertinent weather information for any area in the world. This program is capable of searching by both zip code and city, state in order to retrieve accurate and current weather information.
 
 ## Predictive model predicting if MLB pitches will require Tommy John Surgery
