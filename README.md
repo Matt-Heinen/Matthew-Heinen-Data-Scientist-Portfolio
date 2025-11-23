@@ -116,8 +116,15 @@ This project displays visualization skills and the ability to tell a story throu
 
 This project seeks to provide a data backed approach to determine which teams received a better value in the 2025 MLB trade deadline. This was achieved through the training of a machine learning model to predict future player wins above replacement comparing the return for each team involved in the trade.
 
-DSC 680 Project 2
-Place holder
+## Developing a Third Shot Strategy in Pickleball
 
-DSC 680 Project 3
-Place Holder
+[View the Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline)
+
+This Project uses data science to develop two shot selection models to help both amateurs as well as professionals make the proper shot selection giving them the best chance to win the rally. This machine learning model uses team dempgraphic, positioning ans shot level data to produce two models to pridict which shot type a player should select. 
+
+## Substance Abuse Disorder Detection Model. 
+
+[View the Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline)
+
+This Project trains on over 7 million health records collected from the SAMHSA. This model helps detect if a person may be suffering from substance abuse based on dempgraphic as well as past medical diagnosis. This machine learning model can be implemented by bot medical profesionals and concerned family members to help detect signs of substance abuse. 
+
