@@ -95,6 +95,9 @@ This product explores the factors that lead to increased risk of Tommy John Surg
 
 ## Weather and Carlos Santana’s Effectiveness
 
+[View the Weather-Carlos-Santana-Effectiveness directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Weather-Carlos-Santana-Effectiveness)
+
+
 This project combines data from Statcast, API’s and scraped web data to evaluate the effectiveness of long time MLB first baseman in different conditions and weather environments and parts of the season. This project evaluated the common conception that he plays poorly at the beginning of the year.
 
 ## Clutch Hitting Modeling
