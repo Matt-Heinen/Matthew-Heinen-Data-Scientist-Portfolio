@@ -102,6 +102,9 @@ This project combines data from Statcast, API’s and scraped web data to evalua
 
 ## Clutch Hitting Modeling
 
+[View the Clutch-Hitting-Modeling directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Clutch-Hitting-Modeling)
+
+
 This project seeks to evaluate the problem among many MLB teams that they struggle to produce clutch hitting or hitting with runners on base. This project builds both regression as well as clustering models for MLB front offices to implement. Regression models to determine if a certain player will be a clutch hitter. Classification models to help identify players or groups of players who may be clutch hitters.
 
 ## Predicting Post Tommy John Performance
