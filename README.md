@@ -109,6 +109,8 @@ This project seeks to evaluate the problem among many MLB teams that they strugg
 
 ## Predicting Post Tommy John Performance
 
+[View the Predicting-Post-TJ-Performance directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Predicting-Post-TJ-Performance)
+
 This project seeks to evaluate how effective pitcher in MLB will be after returning from Tommy John Surgery. In this project two machine learning models are selected one predicting player performance upon return from Tommy John and a second predicting if a player will be durable or not upon returning from surgery.
 
 ## Evaluating the effectiveness of Pablo Lopez Sweeper.
