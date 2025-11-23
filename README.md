@@ -76,6 +76,7 @@ Thrivent Financial, Minneapolis, MN (June 2018-July 2019)
 # Projects Included:
 
 ## The Effects of Social Media on Emotional Well Being
+[View the The-Effects-of-Social-Media-on-Emotional-Well-Being directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/The-Effects-of-Social-Media-on-Emotional-Well-Being)
 
 This project takes a data backed approach to investigating the true effect on social media making people feel more connected as well as the impact on their social well-being. This project uses data from a wide variety of sources to model and create a statistical analysis on the true effects social media has on our wellbeing.
 
