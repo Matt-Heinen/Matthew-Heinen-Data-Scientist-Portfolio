@@ -118,13 +118,13 @@ This project seeks to provide a data backed approach to determine which teams re
 
 ## Developing a Third Shot Strategy in Pickleball
 
-[View the Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline)
+[View the Developing-a-Third-Shot-Strategy-in-Pickleball directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Developing-a-Third-Shot-Strategy-in-Pickleball)
 
 This Project uses data science to develop two shot selection models to help both amateurs as well as professionals make the proper shot selection giving them the best chance to win the rally. This machine learning model uses team dempgraphic, positioning ans shot level data to produce two models to pridict which shot type a player should select. 
 
 ## Substance Abuse Disorder Detection Model. 
 
-[View the Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Winners-and-Losers-of-the-MLB-Trade-Deadline)
+[View the Substance-Abuse-Disorder-Detection-Model directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Substance-Abuse-Disorder-Detection-Model)
 
 This Project trains on over 7 million health records collected from the SAMHSA. This model helps detect if a person may be suffering from substance abuse based on dempgraphic as well as past medical diagnosis. This machine learning model can be implemented by bot medical profesionals and concerned family members to help detect signs of substance abuse. 
 
