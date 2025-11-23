@@ -1,36 +1,54 @@
-# Evaluating MLB Trade Deadline Moves Through Predicted WAR 
+# Developing a Third Shot Strategy in Pickleball
 
-This project seeks to build a framework to evaluate these moves using data driven models to determine true “winners” and “losers” of these trades. This will allow both front offices as well as media outlets to evaluate these trades with data backed models as opposed to arbitrary opinions. 
+This project uses data science and predictive modeling to optimize third shot selection in pickleball. By training machine learning models on rally and shot data, this project aims to help players develop winning strategies for the critical third shot in a rally.
 
 ## Description
 
-This project seeks to provide a data backed approach to determine which teams received a better value in the 2025 MLB trade deadline. This was achieved through the training of a machine learning model to predict future player wins above replacement comparing the return for each team involved in the trade. It does so through training several machine learning and regression models and then evaluating them. Finally the models are used to predict and compare the Future WAR of players involved in MLB trades at the 2025 trade deadline. 
+This project provides a data-driven approach to determining the optimal third shot selection in pickleball. The third shot is crucial in pickleball as it sets up the rally and can significantly impact the outcome. This project trains several machine learning models to predict the best shot type (Drop, Drive, or Lob) based on player characteristics, court positioning, and rally dynamics. 
+
+The project includes:
+- Connection to the PKLMart database containing professional pickleball match data
+- Extraction and cleaning of rally, shot, and player data from the database
+- Handling missing data through imputation strategies
+- Feature engineering including player gender, dominant hand, court position (loc_x, loc_y), and ball travel time
+- Training multiple models (Logistic Regression, Random Forest, XGBoost, Neural Networks) for professional and amateur play
+- Model evaluation and comparison to identify the best predictive model
+
+### Database Structure
+
+The project uses the PKLMart PostgreSQL database with the following key tables:
+- **rally**: Contains rally-level data including serving team, return team, players, third shot type, winner, and rally length
+- **shot**: Contains shot-level data including shot location (loc_x, loc_y), ball travel time (btt_before), and shot type
+- **player**: Contains player attributes including gender and dominant hand
 
 ## Getting Started
 
 ### Dependencies
 
-Python 3.9 
-Jupyter Notebooks
-Pandas
-matplotlib
-seaborn
-sklearn
-numpy
-statsmodels.api
-warnings
+- Python 3.9+
+- Jupyter Notebooks
+- psycopg2 (PostgreSQL database adapter)
+- pandas
+- numpy
+- matplotlib
+- scikit-learn
+- xgboost
 
 ### Installing
 
-pip install jupyter pandas matplotlib seaborn scikit-learn numpy statsmodels
+```bash
+pip install jupyter psycopg2-binary pandas numpy matplotlib scikit-learn xgboost
+```
 
 ### Executing program
 
 1) Download the entire repository 
 
-2) To run the code open the .ipynb file from the repository 
+2) Open the `Shot Selection Pickleball.ipynb` file from the repository
 
-3) Select Run all 
+3) Note: Database connection requires credentials to the PKLMart database. Update connection parameters as needed.
+
+4) Select Run all 
 
 
 ## Authors
@@ -45,7 +63,5 @@ Matthew Heinen: @Matt-Heinen
 
 ## Acknowledgments
 
-Baseball savant: Statcast, trending MLB players and visualizations. baseballsavant.com. (n.d.). https://baseballsavant.mlb.com/ 
-Matthew Taylor has been a writer with Twins Daily since 2020. If you can’t find him at Target Field you’ll most likely find him at the movie theater.                  Follow Matthew Taylor on Twitter: MatthewTaylorMN. (2025, August 11). Grading the 9 trades from the Twins’ 2025 trade deadline. Twins Daily. https://twinsdaily.com/news-rumors/minnesota-twins/grading-the-9-trades-from-the-twins-2025-trade-deadline-r18916/ 
-War leaderboards. FanGraphs Baseball. (n.d.). https://www.fangraphs.com/leaders/war?season=2024 
-
+- PKLMart database for providing professional pickleball match data
+- Bellevue University DSC 680 course for project framework and guidance
