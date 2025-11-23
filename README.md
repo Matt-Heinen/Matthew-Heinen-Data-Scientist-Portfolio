@@ -88,6 +88,9 @@ This program uses python programming to build an application that uses a collect
 
 ## Predictive model predicting if MLB pitches will require Tommy John Surgery
 
+[View the Predicting-Tommy-John-Surgery directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Predicting-Tommy-John-Surgery)
+
+
 This product explores the factors that lead to increased risk of Tommy John Surgery. Additionally a predictive model is built to predict a player likelihood of tommy john through logistic regression. The model provides tons of value and insight on to what factors MLB front offices should be looking at with pitcher injuries.
 
 ## Weather and Carlos Santana’s Effectiveness
