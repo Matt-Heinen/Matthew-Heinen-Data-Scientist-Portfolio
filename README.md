@@ -115,6 +115,9 @@ This project seeks to evaluate how effective pitcher in MLB will be after return
 
 ## Evaluating the effectiveness of Pablo Lopez Sweeper.
 
+[View the Evaluating-Effectiveness-Pablo-Lopez-Sweeper directory on GitHub](https://github.com/Matt-Heinen/Matthew-Heinen-Data-Scientist-Portfolio/tree/main/Evaluating-Effectiveness-Pablo-Lopez-Sweeper)
+
+
 Following the 2024 season the common sentiment was that Pablo Lopez’s sweepe was less effective than in previous season. In this project we research that common sentiment and perform statistical analysis to evaluate if Pablo’s sweeper pitch was truly less effective.
 
 ## Advertising Cost of Living Improvements Through Childcare Costs
