@@ -1,0 +1,967 @@
+---
+title: "DSC 520 Final Project Step 1: Technology's Influence on Happiness"
+author: "Matthew Heinen"
+afffiliation: "Bellevue University"
+date: "2024-02-07"
+output: pdf_document
+---
+
+# . 
+
+\newpage 
+# Step 1
+## Introduction
+
+|   When my manager accepted his new role, he deleted all his social media accounts. He is, “off the grid” and has never been happier. This made me ponder the question what effect social media has on our happiness and does the connection social media provides outweigh the negative effects it can have on our mental health? 
+
+|   This is a data science problem, and one that can begin to be evaluated through data science firstly because of the sheer amount of data that has been collected on the subject. Companies like Facebook, now Meta, have endless user data that they have collected. We also have access to search engine data which can provide insight into what people are looking for and potentially feeling. If we begin to process and model this data, we may be able to optimize how we consume social media and technology to make us happier and more productive people.  
+
+|   Before I begin my own research, I must acknowledge that I am not the first one to attempt to use data science to explain the relationship between social media and happiness. A 2022 data science project found through a natural experiment that the rollout of Facebook across universities in its early years lead to decreasing mental health. After Facebook was introduced at universities students reported increased signs of depression and utilization of university mental health resources (Braghieri, Levy and Makarin, 2022). 
+## Research questions
+
+### 1) Is there any correlation between the increased popularity of social media and depression? 
+
+### 2) What positive effects social media may have on wellbeing, does social media make us feel more connected?
+
+### 3) What are the effects of different social media platforms on productivity? Is there a platfrom that is better for productivity than another. 
+
+### 4) What is the relationship between social media usage and the number of US adults taking Antidepressents? 
+
+### 5) What is the relationship between screen time and mental health and productivity? 
+
+### 6) What effect does deleting social media have on ones mental health? 
+
+## Approach
+
+### 1) Is there any correlation between the increased popularity of social media and depression? 
+|   To answer this question I will run a correlation report among the number of quarterly facebook and Tik Tok users and those searching for the terms social media and depression. This correlation will allow us to evaluate how closely the variables are related and the nature and relative strength of that relationship. Additionally a correlation matrix heat map will be created to visualize these relationships. I will also create a linear model or multiple linear regression to see to what extend social media users may be a predictor of depression search terms. 
+
+### 2) What positive effects social media may have on wellbeing, does social media make us feel more connected?
+|   Answering this question will take a similar approach to question 1. However, this time I will evaluate the social media platform user numbers with the Google trends data around terms of connectedness. After evaluation of correlation, I will fit a linear model to see to what extent social media usage may be a predictor of feeling connected. This linear model will be visualized by a scatter plot and trend line. 
+
+### 3) What are the effects of different social media platforms on productivity? Is there a platfrom that is better for productivity than another. 
+|   To evaluate this question I will create two linear models using Facebook and Tik Tok's usage to predict productivity or Total Factor Productivity. I will then use various methods to evaluate the fit of each model, strength of the relationship and eventually declare which usage of social media may be more influential on productivity. This outcome will then be communicated and visualized with scatter plots and trend lines. 
+
+### 4) What is the relationship between social media usage and the number of US adults taking Antidepressents? 
+|   Much like question 3 evaluating this question will rely heavily on regression models. I anticipate fitting a multiple regression model using Facebook and Tik Tok users to predict US use of antidepressants in adults. This analysis will hopefully shed light on the nature of the relationship between social media usage and depression. 
+
+
+### 5) What is the relationship between screen time and mental health and productivity? 
+|    To evaluate this question I will create three regression models for screen time predicting TFP (Total Factor Productivity) as well as its effect on Google trend data for feelings of connectedness as well as depressive thoughts. This information will then be communicated and visualised with scatter plots and trend lines. Where then the strength of the relationships is discussed. 
+
+### 6) What effect does deleting social media have on ones mental health? 
+|   For the purpose of evaluating this question I will perform a T-Test to determine if the relative interest from Google trend data around depression and connectedness. The two different samples will be split during the existence of popular social media platform Vine, or after it was removed. Evaluating these two samples we will be able to determine if people were more depressed and connected with or with out Vine. 
+
+## Data  
+
+### Tik Tok User Data
+|   This dataset includes the number of Tik Tok users on the platform (millions). This data is denoted quarterly beginning in quarter 1 of 2018 and ending in quarter 1 of 2023. The data set includes two variables quarter and users (millions).
+
+### Facebook User Data
+|   This dataset includes the number of monthly Facebook, now Meta users (millions). This data is denotes quarterly beginning in quarter 3 of 2008 and ending in quarter 2 of 2021. It is important to note that this data is active users, have logged in the last 30 days, and this is measured across multiple Meta owned social media entities, (Facebook, Instagram, Messenger etc.)
+
+### US Bureau of Labor Statistics Data (Total Factor Productivity)
+|   This data set includes total factor productivity.  Total factor productivity (TFP) measures labor productivity by comparing the overall U.S. production output to the inputs including “labor, capital, energy, materials and purchased services.” (U.S. Bureau of Labor Statistics, 2023). This data set provides annual total factor productivity statistics across multiple different business sectors. This data set has 6 variables, however there are three we are interested in; sector, TFP and year. The data set also contains the variables basis measure and units. This data is collected from 1987 to 2022.
+
+### Google Trends Data “Social Media” Depression Term Interest
+|   This data set includes relative interest statistics from google search data including the terms "social media" and "depression". This data is collected monthly and begins September 2009 and ends in June of 2023. This data set includes two variables relative interest and month. 
+
+### Google Trends "Connectedness" Term Interest
+|   This data set includes relative interest statistics from google search data for the terms: "connected", "friends", "fellowship" or "companion". This data is collected monthly and begins January of 2009 and ends June of 2023. This data set includes two variables relative interest and month. 
+
+### CDC Antidepressent Adult Use data. 
+|   This data set includes the percent of US men and women who are on Antidepressants. This data is collected biannually between 2009 and 2018. This data set includes 3 variables: sex, percent use of antidepressents and year. 
+
+### Screen Time Usage Data. 
+|   This data set includes average screen time annually from 2013 to 2021. This data set is very small with only a couple of observations. This data set has been compiled from multiple sources and published in an onlin article discussing different trends in screen time. This dataset has two variables screen time in hours and minutes (this is stored in text and may require transformation using stringr) and year. 
+
+## Required Packages
+
+### readxl
+|   Some data is stored in excel file, to read it into R this is essential. 
+### ggplot2
+|   To create graphs and plot this project will rely heavily on this package. 
+### dplyr 
+|   filtering and grouping several data sets will be essential to get comparable results as data is collected in months, quarters and year. In order to perform analysis transformations will need to be made. This will also be necessary to perform joins and merges. 
+### ggthemes
+|   This package helps apply themes to plots, creating a consistent and polished look. 
+### reshape2 and scales
+|   These packages are required to create correlation matrix's and the corresponding heat maps. 
+### purrr
+|   This package will be needed to trim data frames to the same size as the all begin and end at different times. 
+### Stringr
+|   Stringer may be needed to get all the quarterly and time data denoted in the same format. 
+### plyr
+|   This package will be used for combining data sets. 
+
+
+## Plots and Table Needs
+|   Research questions will require several tables to display averages, p-values, correlation coefficients, t-test results as well as other numerical data to communicate what numbers our various statistical tests or models mean in the context of our research questions.  
+
+|   I will also need to build several graphs. The most common graph I will need is the scatter plot. Multiple research questions require regression models to be built to evaluate the effects of technology and social media. Scatter plots as well as trend lines of the built models are the best way to communicate this information. There will also be a need for heat maps to visualize the correlation matrix in question 1. This heat map will help visualize the strength of the different relationships. Lastly, there may be a need for several bar graphs to add some visualizations and conceptualize some of the values also displayed in tables.  
+
+## Questions for Future Steps
+|   Several research questions deal with trying to predict Google trend search data around searches of depression as well as connectedness. Fitting a model to this may go beyond simple linear regression. Learning to build logistic models that can handle categorical data to account for seasonality or non-numeric data will be essential if fully describing these relationships. Additionally predicting US antidepressant use could be an interesting and related topic that will require more tools than simple linear regression. To predict US antidepressant use seasonality will likely need to be a predictor. To achieve this goal logistic and categorical modeling will be essential.  Finally, learning to partition training and test sets of data would be essential if the models discussed above are to be applied outside a strictly academic sense.  
+
+\newpage 
+# Step 2
+## How did you import and clean your data?
+## Importing Data
+|    The first step to analysing and preparing the data is to first collect and import all the data sets. This will allow us first to see what we have read into R. From there we can make some small adjustments to improve the readability or remove data that we know we will not be needing. This will be acheived using the "read_excel" and "read.table" functions. 
+### Tik Tok User Data
+```{r}
+#Import Tik Tok data set. 
+
+# Call readxl library
+library(readxl)
+
+#Save file path 
+FilePath <- "Tik_Tok_User_Data.xlsx"
+
+# read in the file 
+TikTok <- read_excel(FilePath, sheet="Sheet1" )
+
+# Verify data read in properly. 
+head(TikTok)
+
+```
+### Facebook User Data
+```{r}
+# Call readxl library
+library(readxl)
+
+#Save file path 
+FilePath <- "facebook_-number-of-monthly-active-users-worldwide-2008-2021.xlsx"
+
+# read in the file 
+Facebook <- read_excel(FilePath, sheet="Data" )
+
+# Verify data read in properly. 
+head(Facebook)
+```
+
+### US Bureau of Labor Statistics Data (Total Factor Productivity)
+```{r}
+# Call readxl library
+library(readxl)
+
+#Save file path 
+FilePath <- "total-factor-productivity-major-sectors.xlsx"
+
+# read in the file
+Labor <- read_excel(FilePath, sheet="MachineReadable" )
+
+# Verify data read in properly. 
+head(Labor)
+```
+|   Notice above we chose to read in the Machine Readable sheet. This is the format that will be most valuable moving forward and require the least amount of transformations. We will still need to filter and narrow down our dataset below to get to the statistics we want to analyse.chosing this sheet helps us begin at a much more productive starting point.
+
+|   The next step in cleaning this dataset is filtering the data set down to only the information we want. For the purposes of this project we would like to evaluate total factor productivity in the private business sector. For ease of future analysis we will use a filter to trim our data set to only include these data points. 
+
+```{r}
+#Filter the Labor data set to include only datapoints on TFP and 
+# private business sector. 
+
+# Call dplyr
+library(dplyr)
+
+#Filter by private business sector
+Labor %>% filter(`Sector` == "Private business sector") -> Labor
+
+#Filter by TFP
+Labor %>% filter(`Measure` == "Total factor productivity") -> Labor
+
+#Filter by Units (Index)
+# Call stringr
+library(stringr)
+Labor %>% filter(str_detect(`Units`,"^Index")) -> Labor
+
+# Test to ensure printout was accurate. 
+head(Labor)
+
+```
+|   This dataset has now been cleaned and filtered to our useful information that we intend on using. It is now in a workable place that we can merge it with other datasets to perform analysis. 
+### Google Trends Data “Social Media” Depression Term Interest
+```{r}
+# Define file path. 
+filePath <- "Google trend SM + Depression.csv"
+
+# Read into a data frame. 
+SMDepr <- read.table(file=filePath, header=TRUE, sep =",")
+
+# Test for proper import. 
+head(SMDepr)
+```
+
+### Google Trends "Connectedness" Term Interest
+```{r}
+# Define file path. 
+filePath <- "Google Connectness.csv"
+
+# Read into a data frame. 
+Connectedness <- read.table(file=filePath, header=TRUE, sep =",")
+
+# Test for proper import. 
+head(Connectedness)
+```
+### CDC Antidepressent Adult Use data. 
+|   This dataset is only accessible by PDF, There are tools available within r to extract data from PDFs into R. However, due to the small size of the data set and my very limited knowledge of scraping information from PDFs to R. I will simply be transcribing the information by hand to an excel file that we will then read into the program. 
+```{r}
+# Call readxl library
+library(readxl)
+
+#Save file path 
+FilePath <- "CDCAntidepressentUse.xlsx"
+
+# read in the file
+CDCAnti <- read_excel(FilePath, sheet="Sheet1" )
+
+# Verify data read in properly. 
+head(CDCAnti)
+```
+
+### Screen Time Usage Data. 
+```{r}
+# Call readxl library
+library(readxl)
+
+#Save file path 
+FilePath <- "ScreenTime.xlsx"
+
+# read in the file
+ScreenTime <- read_excel(FilePath, sheet="Sheet1" )
+
+# Verify data read in properly. 
+head(ScreenTime)
+```
+
+
+
+
+## What does the final data set look like?
+|   After reviewing the questions as well as noting at what frequency each variable is recorded, I have determined that there will need to be 3 final data sets. The first will include data denoted quarterly of facebook users, TikTok users, Google trend data for searches of depression and social media as well as Google trend data for terms of connectedness. This dataset will be used to answer questions 1, 2 and 6.
+|   The second dataset will be denoted annually and will include Facebook user data, TikTok user data,  Total Factor Productivity, as well as Google trend data on "social media and depression" and terms of connectedness. This dataset will be used to answer questions 3 and 5. 
+|   The third dataset will be denoted biannually and include Facebook and TikTok user data as well as US antidepressant usage data. 
+
+### Dataset 1
+|   First for dataset 1 we will need to get all of the imported data to be in the same format of quarterly data. Without a consistent format it is impossible for the different datasets to be joined and merged accurately. 
+
+```{r}
+# Add consistent format column to TikTok Data set. 
+# Call dplyr and stringr
+library(dplyr)
+library(stringr)
+
+# Create Year Column
+TikTok %>% mutate(YEAR = substr(`QTR YEAR`, 2,3)) -> TikTok
+TikTok$YEAR <- sub("^", "20", TikTok$YEAR)
+
+
+# Create Qtr Column
+TikTok %>% mutate(QTR = str_sub(`QTR YEAR`, -2,-1)) ->TikTok
+
+#Create YEAR_QTR
+TikTok$YEAR_QTR <- paste(TikTok$YEAR, TikTok$QTR)
+
+# Remove Excess Columns
+TikTok2 <- select(TikTok, YEAR_QTR, `TikTok Users (millions)`)
+
+# Validate
+head(TikTok2)
+```
+```{r}
+# Add consistent format column to Facebook Data set.
+# Call dplyr and stringr
+library(dplyr)
+library(stringr)
+
+#Create QTR
+Facebook %>% mutate(QTR = str_sub(`Quarter`,1,2)) -> Facebook
+
+#Create Year
+Facebook %>% mutate(YEAR = str_sub(`Quarter`, -2,-1))-> Facebook
+Facebook$YEAR <- sub("^", "20", Facebook$YEAR)
+
+#Create YEAR_QTR
+Facebook$YEAR_QTR <- paste(Facebook$YEAR, Facebook$QTR)
+
+#Rename column 2
+colnames(Facebook)[2] <- "Facebook Users (millions)"
+
+# Remove excess columns
+Facebook2 <- select(Facebook, -QTR, -YEAR, -Quarter)
+
+# Validate
+head(Facebook2)
+```
+|   The Google Trends "Connectedness" Term Interest and Google Trends Data “Social Media” Depression Term Interest datasets both share the same format because of this we can perform a merge or join in order to merge the datasets together. This way we only have to format the proper YEAR_QTR column once. 
+```{r}
+# Merge Google Trends Data “Social Media” Depression Term Interest and 
+# Google Trends "Connectedness" Term Interest
+GoogleData <- merge(Connectedness, SMDepr, By="Month")
+
+# Rename Columns for ease of use. 
+colnames(GoogleData) [2]<- "Connectedness Terms Interest"
+colnames(GoogleData)[4]<- "Social Media and Depression Term Interest"
+
+# Add consistent column format to Google Trends Data “Social Media” Depression 
+# Term Interest and Google Trends "Connectedness" Term Interest
+
+# Add YEAR
+GoogleData %>% mutate(YEAR=str_sub(`Month`, 1, 4)) -> GoogleData
+
+# Separate Month
+GoogleData %>% mutate(MONTHNUM=str_sub(`Month`, -2,-1))->GoogleData
+
+# Add Qtr
+GoogleData %>% mutate(QTR = ifelse(MONTHNUM == "01", "Q1",
+                                   ifelse(MONTHNUM == "02", "Q1",
+                                   ifelse(MONTHNUM == "03", "Q1",
+                                   ifelse(MONTHNUM == "04", "Q2",
+                                  ifelse(MONTHNUM == "05", "Q2",
+                                  ifelse(MONTHNUM == "06", "Q2",
+                                  ifelse(MONTHNUM == "07", "Q3",
+                                  ifelse(MONTHNUM == "08", "Q3",
+                                  ifelse(MONTHNUM == "09", "Q3",
+                                  ifelse(MONTHNUM == "10", "Q4",
+                                  ifelse(MONTHNUM == "11", "Q4", "Q4") 
+                                  ))))))))))) ->GoogleData
+
+# Create YEAR_QTR
+GoogleData$YEAR_QTR <- paste(GoogleData$YEAR, GoogleData$QTR)
+
+
+# Remove excess columns 
+GoogleData2 <- select(GoogleData, `YEAR_QTR`, `Connectedness Terms Interest`, `Social Media and Depression Term Interest`)
+
+
+
+#Validate
+head(GoogleData2)
+```
+
+```{r}
+# merge datasets together. 
+
+# TikTok and Facebook data
+Dataset1 <-merge(TikTok2,Facebook2, By="YEAR_QTR")
+
+# Dataset1 and GoogleData
+Dataset1 <-merge(Dataset1, GoogleData2, By="YEAR_QTR")
+
+#convert Facebook data to dbl. 
+
+Dataset1<- transform(Dataset1, `Facebook Users (millions)`=as.numeric(`Facebook Users (millions)`))
+
+# Print whole dataset
+Dataset1
+
+
+```
+### Dataset 2
+|   Dataset 2 is denoted annually. Therefore, in order to perform our analysis and modeling in the future we need to create a standard format and summary of the data in an annual fashion. Additionally, Some column names will need to be modified in order to create a readable merged dataset 
+
+```{r}
+# The "US Bureau of Labor Statistics Data (Total Factor Productivity)" dataset 
+# is already denoted in an acceptable year format.
+
+#Change Value Column title. 
+colnames(Labor) [7]<- "Value (TFP)"
+
+#Change Year Column name to YEAR
+colnames(Labor) [6]<- "YEAR"
+
+#Select necessary columns
+Labor2 <-select(Labor, `YEAR`, `Value (TFP)`)
+
+#Validate results
+head(Labor2)
+
+```
+```{r}
+# Summarize GoogleData dataset by finding the maximum annual interest. 
+#Call dplyr
+library(dplyr)
+
+# Summarize Connectedness 
+GoogleData %>%group_by(YEAR) %>% summarise(Maximum_Connectedness_Interest = 
+                                             max(`Connectedness Terms Interest`)
+                                           ) -> GoogleData3
+# Summarize SM Depression 
+GoogleData %>% group_by(YEAR) %>% summarise(Maximum_SM_Depression_Interest = 
+                          max(`Social Media and Depression Term Interest`)
+                          )->GoogleData4
+
+# Merge two summaries together. 
+GoogleDataAnnual <- merge(GoogleData3, GoogleData4, By="YEAR")
+
+#validate
+head(GoogleDataAnnual)
+```
+```{r}
+# Facebook User Data. 
+# Summarize Users (find maximum annually)
+#Call dplyr
+library(dplyr)
+Facebook %>% group_by(YEAR) %>% summarise(Facebook_Users_Millions = 
+                                            max(`Facebook Users (millions)`)
+                                          )-> FacebookAnnual
+
+# Validate
+head(FacebookAnnual)
+```
+
+```{r}
+# TikTok User Data.
+# Summarize Users (find maximum annually)
+#Call dplyr
+library(dplyr)
+TikTok %>% group_by(YEAR) %>% summarise(TikTok_Users_Millions = 
+                                          max(`TikTok Users (millions)`)
+                                        )-> TikTokAnnual
+
+# Validate
+head(TikTokAnnual)
+```
+```{r}
+# merge all of the prepared datasets above to form dataset 2. 
+# use an outer join to include all rows. 
+Dataset2 <- merge(Labor2, GoogleDataAnnual, By="YEAR", all = TRUE)
+
+Dataset2 <-merge(Dataset2, FacebookAnnual, By="YEAR", all = TRUE)
+
+Dataset2 <-merge(Dataset2, TikTokAnnual, By="YEAR", all = TRUE)
+
+# Print dataset2
+Dataset2
+
+```
+|   As seen above Dataset 2 is merged using an outer join. An outer join was chosen to keep all the data points. In the analysis portion, the data may need to be paired down using the purrr library depending on which question we are trying to evaluate. 
+### Dataset 3
+|   Dataset 3 contains the CDC data in adult use of antidepressants. This dataset is only collected biannually. Therefore this dataset will require some grouping and modifying of the Google trend datasets so that they can all be merged by the same years. 
+
+```{r}
+# CDC Antidepressant Data
+# This Data is already in an accetable Biannual format.
+
+# Rename Year to Biannual for consistency 
+colnames(CDCAnti) [1]<- "Biannual"
+
+# Select the Columns we will need for analysis
+CDCAntiBiannual<- select(CDCAnti, `Biannual`, `Percent Use (Both)`, `Men Percent Use`, `Percent Use (Women)` )
+
+#Validate
+(CDCAntiBiannual)
+```
+``` {r}
+# Google Trend Data
+# In order to get the Google trend data to match the biannual output from the CDC antidepressent data we will have to create another column based off of year that shows what biannual term the datapoint falls in. 
+# Add Year (biannual)
+library(dplyr)
+GoogleData %>% mutate(Biannual = ifelse(YEAR == "2009", "2009-2010",
+                                   ifelse(YEAR == "2010", "2009-2010",
+                                   ifelse(YEAR == "2011", "2011-2012",
+                                   ifelse(YEAR == "2012", "2011-2012",
+                                  ifelse(YEAR == "2013", "2013-2014",
+                                  ifelse(YEAR == "2014", "2013-2014",
+                                  ifelse(YEAR == "2015", "2015-2016",
+                                  ifelse(YEAR == "2016", "2015-2016",
+                                  ifelse(YEAR == "2017", "2017-2018",
+                                  ifelse(YEAR == "2018", "2017-2018", "NA")
+                                  )))))))))) ->GoogleDataBiannual
+
+# Summarize by Biannual to find Max interest in period 
+# Summarize Connectedness 
+GoogleDataBiannual %>%group_by(Biannual) %>% 
+  summarise(Maximum_Connectedness_Interest = 
+                                          max(`Connectedness Terms Interest`)
+                                           ) -> GoogleDataBiannualCon
+# Summarize SM Depression 
+GoogleDataBiannual %>% group_by(Biannual) %>% 
+  summarise(Maximum_SM_Depression_Interest = 
+                          max(`Social Media and Depression Term Interest`)
+                          )->GoogleDataBiannualSM
+
+# Merge two summaries into one dataset. 
+GoogleDataBiannual2 <- merge(GoogleDataBiannualCon, GoogleDataBiannualSM, 
+                             By="Biannual")
+
+
+#Validate 
+head(GoogleDataBiannual2)
+```
+```{r}
+# Merge to form final Dataset 3 
+Dataset3 <- merge(CDCAntiBiannual, GoogleDataBiannual2, By="Biannual")
+
+# Print Dataset3
+Dataset3
+```
+
+## What information is not self-evident?
+|   There are several portions of our final datasets where the units or values may not be self-evident. Primarily, the interest values that are in both Google trend datasets for searches containing the terms "social media and depression" as well as terms of connectedness. The interest values are a relative value for the popularity of searches containing these terms in a given period of time.  
+|   Additionally, the value for total factor productivity is not entirely explained. Much like with the Google trend data discussed above, total factor productivity is a relative measure of the amount of gross domestic product produced in a given industry compared to the inputs of said industry. The values that we will be analyzing are a relative value where the year of 2017 is set as a base value of 100. 
+|   Lastly, This project is aimed at discovering the relationships between technology, social media, mental health and productivity. The goal is to show with statistical prowess do these relationships exist and to what extent. It would be easy to look and say social media users increased and so did searches for mental health and depression, however this analysis is superficial and may not be telling the whole story. This project hopes to discover and measure these relationships at a more complex and analytical level. 
+## What are different ways you could look at this data?
+|   I feel that our data selection and research questions have been both thoughtful and creative at finding ways to evaluate the relationships between technology, social media, mental health and productivity. I'm sure that with the vastly different data sources that we have there are many different relationships we could choose to evaluate. However, for the purpose of maintaining some level of scope for this project we will stick to evaluating the 6 questions already laid out. 
+## How do you plan to slice and dice the data?
+|   I have already sliced and diced some data during the importing and cleaning process of the CDC Total Factor Productivity dataset. I did this to remove the values and terms that we will not be using. This was achieved by using the filter function from the dplyr package as well as functions from the stringr package. Additionally, the Google trend data has been sliced and diced in both Dataset 2 and 3. This was done to find the maximum interest levels annually and biannually. With the data transformed in this manner we will now be able to answer the questions that require data only recorded in these intervals. 
+## How could you summarize your data to answer key questions?
+|   The group and summarize functions from the dplyr package are used in order to create our datasets. For instance, in Dataset 2 the summarize function is used to find the maximum annual interest in searched for social media and depression, as well as terms of connectedness. We see a similar manipulation of data done to create Dataset 3 except this time the maximum values are found by the biannual values. This will allow us to build the models in future steps that are discussed in the approach section above. 
+## What types of plots and tables will help you to illustrate the findings to your questions?
+|   Now that we have built and prepared three datasets, we can begin to perform some deeper analysis. The use of plots and tables will be essential in presenting our findings. I anticipate needing to build several tables. For question 1 a table displaying the different correlation values, and for question 6 a table displaying the values of the t-test to determine if the deleting of social media has a real effect on people searching Google for terms of depression or connectedness. 
+|   For plots, I anticipate all questions needing a plot to communicate the results. Question 1 will get a correlation matrix heatmap. Questions 2, 3, 4 and 5 will all be visualized using a scatter plot with a trend line included representing the regression model that is built for each question. Question 6 will include a bar graph to show the differences in the average of each dataset tested in the t-test.  
+## Do you plan on incorporating any machine learning techniques to answer your research questions? Explain.
+|   Yes I do plan in incorporating several different machine learning models to answer the research questions outlined in step 1. For example, the analysis for questions 2,3,4 and 5 all require the building of a regression model. Models will be built to evaluate the relationship between two variables or predict phenomena.  Most notably in questions 4 and 5 the building of a machine learning model will be used to see if we can build an effective model to predict the demand for antidepressants, relative productivity or predict the number of people that may be experiencing depression due to their use of technology and social media platforms. 
+## What questions do you have now, that will lead to further analysis or additional steps?
+|   I am excited to begin building regression models and visualizing the results of each. I am wondering about the statistical significance of my predictors and if they can add value to the model beyond what is simply explained by the time series. After digging in a little further I am interested to see if seasonality plays an effect as a predictor for Google searches around social media and depression. After looking at the strength of the predictors in my datasets I may consider adding some seasonality features to my machine learning models. 
+
+\newpage
+
+# Step 3
+
+## Introduction.
+
+|   As a refresher this project seeks to examine the relationship that social media and technology have on people's mental health, wellbeing, and productivity. The idea for this project was inspired by my manager removing himself from all social media platforms and saying that he has “never felt happier” as a result.  
+
+|   Previous research done on the topic has found an overall negative effect that social media can have on mental health. 	A 2022 data science project found through a natural experiment that the rollout of Facebook across universities in its early years lead to decreasing mental health. After Facebook was introduced at universities students reported increased signs of depression and utilization of university mental health resources (Braghieri, Levy and Makarin, 2022). This project aims to build on this conversation and find new insights across multiple platforms while also addressing productivity concerns associated with social media and technology.  
+
+|   Above in previous steps we have laid out research questions, approach and have prepared our data for analysis.  In the sections below we will demonstrate and discuss our findings in the relationships between social media, technology, mental health, and productivity.  
+
+## The problem statement you addressed. 
+
+|   The main problem statement we wish to address is to help describe the relationships between social media, technology, mental health, and productivity. More specifically we want to evaluate if social media has a positive or negative affect on our lives, mental health and productivity. How does increased use of technology, screen time, affect our mental health and productivity?  
+
+|   Through the thoughtful analysis of our research questions discussed below we have revealed some findings on these relationships. Some findings may be what one would have expected, others may be the opposite. However, all our findings will help us understand how social media and technology affect our daily lives.  
+
+## How you addressed this problem statement.
+
+|   Naturally through the topics that we have chosen it would be easy to get lost in the endless data the has been collected surrounding social media and technology. In order to stay focused and true to our research objective we have chosen to evaluate 6 unique research questions.  
+
+|   Each of these research questions is designed to explain how one piece of our puzzle may relate to another piece.  Each of the six research questions has been assigned a specific statistically backed approach to help describe the relationship that we see among our datapoints. Some questions are answered through the building of a machine learning model, others are answered using statistical tools such as a T-test. The simplest of our research questions aims to answer if there is a relationship between increased social media users and perceived depression and is evaluated simply through correlation. 
+
+|   A more in-depth description of the approach to each specific research question can be found in Part 2. In the “Approach” section of part 2 each specific model, statistical tool and visualization choice is discussed in depth for each research question.   
+
+
+## Analysis.
+
+### 1) Is there any correlation between the increased popularity of social media and depression? 
+
+```{r}
+# Find corelation statistics for Tik Tok, Facebook users and Searches for
+# social media and depression. 
+
+# Find Correlations
+FacebookCor <- cor(Dataset1[, c(2:3, 5)])
+FacebookCor
+
+##Create a heat map of correlation 
+#Load reshape 2 to melt 
+library(reshape2)
+# Call Library Scales
+library(scales)
+
+#Melt into long format
+FacebookCorMelt <- melt(FacebookCor, varnames=c("x","y"), 
+                       value.name ="Correlation")
+
+#Order according to covariance
+FacebookCorMelt <- FacebookCorMelt[order(FacebookCorMelt$Correlation), ]
+
+# Plot Heatmap. 
+library(ggplot2)
+library(ggthemes)
+ggplot(FacebookCorMelt, aes(x=x, y=y))+geom_tile(aes(fill=Correlation))+
+  theme_minimal() + scale_fill_gradient2(low = ("red"), mid="white", 
+                                         high="green", limits=c(-1,1)) +
+  labs(x=NULL, y=NULL) + 
+  ggtitle("Social Media Depression Term Corelation Matrix")
+```
+
+|   As represented by the correlation matrix there is indeed a negative relationship between Facebook and Tik Tok users and Google searches for terms around social media and depression. This means that as we see an increase in either Facebook or Tik Tok users we will see a decrease in google searches for social media and depression.  
+
+|   This relationship is the inverse of what one may expect. This is why it is important to dig into real data and not simply take the sentiment of the general public as fact. Based on the correlation values we do see that Facebook users has a slightly stronger negative relationship to google searches around social media and depression than Tik Tok users.  
+
+
+```{r}
+# Create linear model using Facebook users as a predictor of Social Media 
+# Depression term searches. 
+FacebookSmLM <- lm(Dataset1$Social.Media.and.Depression.Term.Interest ~ 
+                     Dataset1$Facebook.Users..millions., data = Dataset1)
+# Print Summary of Facebook LM 
+print(summary(FacebookSmLM))
+
+# Graph relationship. 
+library(ggplot2)
+ggplot(data = Dataset1, aes(x=`Facebook.Users..millions.`, 
+                            y=`Social.Media.and.Depression.Term.Interest`))+
+  geom_point()+
+  geom_smooth(method = "lm")+theme_economist_white() + 
+  ggtitle("Depression Term Interest by Facebook Users (Millions") +
+  labs(x= "Facebook Users (Millions)", 
+       y = "Social Media and Depression Term Interest")
+```
+
+|   Evaluating a linear model for Facebook users as a predictor of google searches for social media and depression terms, we once again see the negative relationship between the two. What is interesting however is that Facebook Users is a statistically significant predictor (95% confidence interval) of google searches for depression terms (p-value: .007).  This relationship is weak, however as denoted by the coefficient close to zero (-0.04). Additionally, this model only explains 14.9% of variance that we see in google search data suggesting that Facebook users tells part but not the entire story of the relationship between social media and depression. 
+
+```{r}
+# Create linear model using Tik Tok users as a predictor of Social Media 
+# Depression term searches. 
+TikSmLM <- lm(Dataset1$Social.Media.and.Depression.Term.Interest ~ 
+                     Dataset1$TikTok.Users..millions., data = Dataset1)
+# Print Summary of Facebook LM 
+print(summary(TikSmLM))
+
+# Graph relationship. 
+library(ggplot2)
+ggplot(data = Dataset1, aes(x=`TikTok.Users..millions.`, 
+                            y=`Social.Media.and.Depression.Term.Interest`))+
+  geom_point()+
+  geom_smooth(method = "lm")+theme_economist_white() + 
+  ggtitle("Depression Term Interest by Tik Tok Users (Millions") + 
+  labs(x= "Tik Tok Users (Millions)", 
+       y = "Social Media and Depression Term Interest")
+
+```
+
+|   When evaluating the linear model fitting Tik Tok Users and google searches for terms of social media and depression we see a similar story to the Facebook model. Once again, we have a statistically significant negative relationship between the two variables (95% confidence interval, p-value 0.02). This model, however, also has a weak strength as seen by the coefficient of –0.03. Lastly this model explains even less variability than we see in the google search data (10.7%). Again, suggesting that Increasing Tik Tok users may decrease searches surrounding social media and depression but, to describe the entire relationship more pieces of the puzzle must be evaluated.  
+
+### 2) What positive effects social media may have on wellbeing, does social media make us feel more connected?
+
+```{r}
+# Find corelation statistics for Tik Tok, Facebook users and Searches for
+# feelings of connectedness and wellbeing . 
+
+# Find Correlations
+ConnectednessCor <- cor(Dataset1[, c(2:4)])
+print(ConnectednessCor)
+
+##Create a heat map of correlation 
+#Load reshape 2 to melt 
+library(reshape2)
+# Call Library Scales
+library(scales)
+
+#Melt into long format
+ConnectednessCorMelt <- melt(ConnectednessCor, varnames=c("x","y"), 
+                       value.name ="Correlation")
+
+#Order according to covariance
+ConnectednessCorMelt <- ConnectednessCorMelt[order(ConnectednessCorMelt$Correlation), ]
+
+# Plot Heatmap. 
+
+ggplot(ConnectednessCorMelt, aes(x=x, y=y))+geom_tile(aes(fill=Correlation))+
+  theme_minimal() + scale_fill_gradient2(low = ("red"), mid="white", 
+                                         high="green", limits=c(-1,1)) +
+  labs(x=NULL, y=NULL) + ggtitle("Connectedness Term Corelation Matrix")
+```
+
+|   When looking at the correlation matrix between Facebook and Tik Tok Users and google searches for terms of connectedness we see slight negative relationship between both Facebook users and searches of connectedness as well as Tik Tok users and connectedness. This relationship suggests that as users increase for both social media platforms, people feel less connected to others. 
+
+|   This is interesting because both these platforms seek to connect you to others across the globe. It is important to realize that these are both weak relationships as seen by their correlation coefficients below 0.2, However the relationship between Facebook users and connectedness is stronger, meaning the google searches around feeling connected decrease more consistently as Facebook users increase.  
+
+```{r}
+# Create linear model using Facebook users as a predictor of Connectedness
+# term searches. 
+FacebookConLM <- lm(Dataset1$Connectedness.Terms.Interest ~ 
+                     Dataset1$Facebook.Users..millions., data = Dataset1)
+# Print Summary of Facebook LM 
+print(summary(FacebookConLM))
+
+# Graph relationship. 
+library(ggplot2)
+ggplot(data = Dataset1, aes(x=`Facebook.Users..millions.`, 
+                            y=`Connectedness.Terms.Interest`))+geom_point()+
+  geom_smooth(method = "lm")+theme_economist_white() + 
+  ggtitle("Connectedness Term Interest by Facebook Users (Millions") + 
+  labs(x= "Facebook Users (Millions)", y = "Connectedness Term Interest")
+```
+
+|   As we may have suspected, when fitting a model of Facebook users predicting google searches for terms of connectedness, Facebook users is not a statistically significant predictor. The p-value does meet a 70% confidence interval however and the model does not even explain 1% of variation in search data. Although, the model suggests that increasing Facebook users decreases people's feeling of connectedness, we have no confidence in this result.   
+
+```{r}
+# Create linear model using Tik Tok users as a predictor of Connectedness
+# term searches. 
+TikConLM <- lm(Dataset1$Connectedness.Terms.Interest ~ 
+                     Dataset1$TikTok.Users..millions., data = Dataset1)
+# Print Summary of Facebook LM 
+print(summary(TikConLM))
+
+# Graph relationship. 
+library(ggplot2)
+ggplot(data = Dataset1, aes(x=`TikTok.Users..millions.`, 
+                            y=`Connectedness.Terms.Interest`))+
+  geom_point()+
+  geom_smooth(method = "lm")+theme_economist_white() + 
+  ggtitle("Connectedness Term Interest by Tik Tok Users (Millions") + 
+  labs(x= "Tik Tok Users (Millions)", 
+       y = "Connectedness Term Interest")
+
+```
+
+|   Much like the model above, the model does predict a slight negative relationship between Tik Tok users and google searches of connectedness. However, this model meets no confidence interval (p-value 0.44). The model also explains no variation in google searches. Therefore, Tik Tok users is not a predictor of people feeling connected.   
+
+
+### 3) What are the effects of different social media platforms on productivity? Is there a platfrom that is better for productivity than another. 
+```{r}
+# Build linear regression model to evaluater relationship (predict) productivity.
+
+# Transform dataset 2 to get proper formats 
+transform(Dataset2, `Value (TFP)`= as.numeric(`Value (TFP)`)) -> 
+  Dataset2.1
+transform(Dataset2.1, 
+        `Facebook_Users_Millions` = as.numeric(`Facebook_Users_Millions`))->
+        Dataset2.2
+# Rename columns 
+colnames(Dataset2.2)[2]<- "Value (TFP)"
+
+
+# Build linear regression model
+Q3LM <- lm(`Value (TFP)`~`Facebook_Users_Millions`
+           +`TikTok_Users_Millions`, data= Dataset2.2)
+print("Productivity (TFP) by Social Media Users Model:")
+summary(Q3LM)
+
+# print added variable plots 
+library(car)
+avPlots(Q3LM, intercept = FALSE, main = "Productivity (TFP) by Social Media Users")
+```
+
+|   Based on the results of this model and seen in the “Productivity (TFP) by Social Media Users” plot, The data suggests that Increasing Facebook and Tik Tok users have opposite effects on productivity. According to the model Increasing Facebook users decrease productivity while increasing Tik Tok users decrease productivity.  
+
+|   We have confidence in both these relationships to the 85% confidence level as both predictors sport a p-value below 0.15. Additionally, this model explains nearly 97.3% of variance in Total Factor Productivity.  
+
+|   One may be concerned by the weak value of the coefficients of both Facebook and Tik Tok users. However, this may be explained by the fact that TFP remains steady yearly while social media users increase greatly.  
+
+|   Lastly it is important to note that both platforms have not been around for the same amount of time.  Tik Tok being the younger platform, has only been around the last several years during times of economic boom. Facebook has been around much longer including through the great recession. Because of this we may want to take our findings with a grain of salt.  
+
+
+### 4) What is the relationship between google search data and the number of US adults taking Antidepressents? 
+```{r}
+
+# Build model to predict antidepressent use in both sexes
+BothAntiDepMod <- lm(`Percent Use (Both)` ~ `Maximum_Connectedness_Interest`+ 
+                       `Maximum_SM_Depression_Interest`, data = Dataset3)
+print("Both Sexes Antidepressent Use Model")
+summary(BothAntiDepMod)
+
+# print added variable plots
+library(car)
+avPlots(BothAntiDepMod, intercept = FALSE, 
+        main = "Both Sexes Antidepressent Use by Google Search")
+```
+```{r}
+#Build model to predict antidepresset use in men. 
+MenAntiDepMod <- lm(`Men Percent Use` ~ `Maximum_Connectedness_Interest`+ 
+                      `Maximum_SM_Depression_Interest`, data = Dataset3)
+print("Men Antidepressent Use Model")
+summary(MenAntiDepMod)
+
+# print added variable plots
+library(car)
+avPlots(MenAntiDepMod, intercept = FALSE, 
+       main = "Men Antidepressent Use by Google Search")
+```
+```{r}
+#Buile Model to predict antidepressent use in women 
+WomenAntiDepMod<- lm(`Percent Use (Women)` ~ `Maximum_Connectedness_Interest`+ 
+                       `Maximum_SM_Depression_Interest`, data = Dataset3)
+print("Women Antidepressent Use Model")
+summary(WomenAntiDepMod)
+
+
+# print added variable plots
+library(car)
+avPlots(WomenAntiDepMod, intercept = FALSE, 
+       main = "Women Antidepressent Use by Google Search")
+```
+
+|   When evaluating the relationship between relative google searches for connectedness and depression terms and antidepressant use in men, women and both sexes, we see a positive relationship in each model. As seen in the added variable plots and in each regression model they suggest that an increase in google searches for connectedness or depression terms both lead to an increase in antidepressant use across all demographic groups.  
+
+|   However, as we dig into the p values, we see that we have no statistically significant predictors in all three models.  Additionally, every model built to evaluate this question our predictors explain essentially no variations in our data. In fact, all three models-built sport a negative adjusted R squared; Meaning that our models have no predictive value. Because of this we must accept a null hypothesis and state that google searches around connectedness or depression have no affect or relation on antidepressant use.  
+
+### 5) What is the relationship between screen time and mental health and productivity? 
+```{r}
+# Add screentime to dataset 2 
+library(stringr)
+# Create usable Year column
+ScreenTime %>% mutate(YEAR = str_sub(Year, -4,-1)) -> ScreenTime
+#create Minutes colume
+ScreenTime %>% mutate(ScreenTime_hoursmin = 
+                        (as.numeric(str_sub(`Average Screen Time`, 1,1)))*60) ->ScreenTime
+ScreenTime %>% mutate(ScreenTime_minmin = 
+                        as.numeric(str_sub(`Average Screen Time`, -10,-9))) -> ScreenTime
+ScreenTime %>% mutate(`Average Screen Time Minutes` =
+                        `ScreenTime_minmin` + `ScreenTime_hoursmin`)->ScreenTime
+
+#Select columns to keep 
+ScreenTimeClean <- select(ScreenTime, YEAR, `Average Screen Time Minutes` )
+# Create Q5Dataset
+
+Q5Dataset <- merge(Dataset2.2, ScreenTimeClean, by= "YEAR")
+
+# Build model using screen time to predict SM depression searches
+ ScreenTimeSMDeprMod <- lm(`Maximum_SM_Depression_Interest`~
+                             `Average Screen Time Minutes`, data = Q5Dataset)
+ print("Social Media Depression Interest Model:")
+ summary(ScreenTimeSMDeprMod)
+ 
+ ggplot(data = Q5Dataset, aes(x=`Average Screen Time Minutes`, 
+                              y= `Maximum_SM_Depression_Interest`))+
+   geom_point()+
+   theme_economist_white()+labs(y="Social Media Depression Term Interest")+
+   geom_smooth(method = lm)+
+   ggtitle("Social Media Depression Term Interest by Screen Time")
+
+
+```
+
+|   As shown in the model above, as national average screen time increases so do google searches around social media and depression. In fact, screen time is a statistically significant predictor of relative google searches for social media and depression (95% confidence interval).  This suggests that as Americans are spending more time on their screen, they are feeling more depressed. This is a strong model as well with average screen time explaining 49.1%, nearly half, of the variance that we see in relative google searches around social media and depression   
+
+
+```{r}
+# Build model using screen time to predict productivity 
+ ScreenTimeProductivityMod <- lm(`Value (TFP)`~
+                             `Average Screen Time Minutes`, data = Q5Dataset)
+ print("Productivity (TFP) Model:")
+ summary(ScreenTimeProductivityMod)
+ 
+ ggplot(data = Q5Dataset, aes(x=`Average Screen Time Minutes`, 
+                              y= `Value (TFP)`))+
+   geom_point()+
+   theme_economist_white()+labs(y="Productivity (Total Factor Productivity)")+
+   geom_smooth(method = lm)+
+   ggtitle("Productivity (TFP) by Screen Time")
+
+
+```
+
+|   Screen time is also a significant predictor of productivity (TFP).  As screen time increases people become more productive in the workplace. Screen time meets the 95% confidence interval as a predictor of TFP and explains 61.6% of the variance in TFP. This is a very strong model, and we can have confidence in the idea that increased screen time increases productivity.  
+
+|   This research question has provided some interesting findings. Although increased screen time is suggested by this model to increase feelings of depression in the US; Screen time also is contributing to increased productivity. Which leads to the question if this screen technology is increasing productivity, it does so at what cost?  
+
+### 6) What effect does deleting social media have on ones mental health? 
+```{r}
+
+#merge social media depression and connectedness datasets. 
+Q6Data <- merge(SMDepr, Connectedness, by = "Month")
+
+
+# add column determining id data was with or without vine 
+#January 17, 2017,
+Q6Data %>% mutate(YEAR = as.numeric(str_sub(`Month`,1,4))) -> Q6Data
+Q6Data %>% mutate(MONTH = as.numeric(str_sub(`Month`, -2, -1))) -> Q6Data
+
+#Add vine binart column 
+Q6Data %>% mutate(VINE = ifelse(YEAR < 2017, "With_Vine", 
+                                ifelse(YEAR > 2017, "Without_Vine", 
+                                       ifelse(MONTH == 1, "NA" , "Without_Vine")))) ->Q6Data
+# Remove null values
+Q6Data %>% filter(`VINE` != "NA") -> Q6Data
+
+# Create a with Vine DF
+WithVINE <- Q6Data %>% filter(`VINE` == "With_Vine")
+
+# Create DF W/O Vine
+WOVINE <- Q6Data %>% filter(`VINE` =="Without_Vine")
+#WOVINE
+
+
+
+# Create a plot for Connectedness 
+# Create box plot for SM depr
+ggplot(data = Q6Data, aes(x = VINE, 
+          y=`connected...friends...fellowship...companion...United.States.`)) +
+  geom_boxplot() + labs(y= "Connectedness Term Interest") + 
+  ggtitle("Connectedness Effects Plot") + theme_economist_white()
+```
+
+```{r}
+#T- Test Connectedness
+# Test for normality 
+shapiro.test(Q6Data$connected...friends...fellowship...companion...United.States.)
+shapiro.test(Q6Data$connected...friends...fellowship...companion...United.States.[Q6Data$VINE == "With_Vine"])
+shapiro.test(Q6Data$connected...friends...fellowship...companion...United.States.[Q6Data$VINE == "Without_Vine"])
+# T test Connectedness
+
+t.test(`connected...friends...fellowship...companion...United.States.` ~`VINE`, data = Q6Data, var.equal=TRUE)
+```
+
+|   The purpose of this question is to see if people feel more or less connected before or after vine was deleted. This phenomena of vine being deleted simulates across an entire worldwide population what one may experience as the “go off the grid” and delete social media.  As seen in the box plots, the averages for relative interest in search terms around connectedness are close before and after vine exists. Our t-test confirms this result as after we have established the normality of the data, we can determine that there is no statistically significant difference between the two datasets. This means that the deleting of vine has no effect on how connected people may feel. Suggesting that deleting one's social media will have no effect on how connected they feel.  
+
+
+```{r}
+# Create box plot for SM depr
+ggplot(data = Q6Data, aes(x = VINE, 
+                          y=`X.Social.Media..depression...United.States.`)) +
+  geom_boxplot() + labs(y= "Social Media and Depression Term Interest") + 
+  ggtitle("Social Media and Depression Effects Plot") + theme_economist_white()
+
+#T-Test SM DEPR
+# Test for normality 
+shapiro.test(Q6Data$X.Social.Media..depression...United.States.)
+shapiro.test(Q6Data$X.Social.Media..depression...United.States.[Q6Data$VINE == "With_Vine"])
+shapiro.test(Q6Data$X.Social.Media..depression...United.States.[Q6Data$VINE == "Without_Vine"])
+# T-test SM Depression 
+t.test(`X.Social.Media..depression...United.States.` ~`VINE`, data = Q6Data, var.equal=TRUE)
+```
+
+|   Unlike the model above, when comparing the averages of relative search interest for terms around social media and depression pre and post Vine era; We see that relative search post vine is much greater. In fact, the relative searches for terms involving social media and depression averaged nearly five times greater than with vine.  After performing our t-test we see that there is a significant difference between the two populations (over 99% confidence interval). These findings suggest that deleting one's social media may in fact increase depressive symptoms.  
+
+## Implications. 
+
+|   Based on our findings we have some extraordinarily convincing evidence that increased screen time is a significant predictor of increased productivity and google searches for terms involving social media and depression. This is an especially important finding in that increased screen time leading to more productivity may be coming at the expense of our mental health. Thus, meaning that if managers were to make decisions based on this model, they should keep in mind the potential negative effects.  
+
+|   Secondly, some of our analysis suggests increasing social media users decreases searches for social media and depression. Although both relationships have been found statistically significant, the weak and poor fitting relationships raise questions. I feel that more variables should be evaluated to create better fitting models before implementing decisions on this information.  
+
+|   The study revealing the deleting of Vine had no effect on people's feelings of connectedness may help influence people to go ahead with and “get off the grid.” Many who worry about losing their connection to friends afar may find comfort in knowing that nationally Americans felt no difference in connectedness in the wake of Vines termination.
+
+## Limitations.
+
+|   The relationships that we see evaluated in question 3 raises more questions, stating that increasing Facebook users decrease productivity while Tik Tok users and productivity have a positive relationship.  Although these were both proven strong statistically significant predictors, I feel that the small sample size of particularly the TikTok data in an annual format limit my confidence. There may be larger external factors at play, and we should collect more data before implementing decisions based on this model.  
+
+|   The finding that deleting Vine actually decreased relative searches for social media and depression may be looking at too large of a scope. With more granular data a better or more effective test may take search data from the week before and week after the deleting of vine. Evaluating the years before and after may mean that we are seeing outside factors affect the differences that we are seeing pre and post Vine.  
+
+|   Some of the findings above are limited by the sheer lack of data points in some data points. Specifically, the analysis of antidepressant use was difficult due to there being only 6 data points in each demographic. I feel that with more data points finding relationships of how social media and technology affect antidepressant use may be more feasible.  
+
+|   Lastly, some models may be subject to overfitting, the small datasets mean that building models using training sets and validating with a test set is not practical. With more data points we could have more confidence in our results. Thus, implementing decisions based on the models built would be easier to decision makers.  
+
+## Concluding Remarks
+
+|   Altogether, I feel that we have just begun to evaluate the relationship between social media, technology, mental health, and productivity.  We have some promising findings like screen time being a strong positive predictor for productivity, but also at a cost of increased searches around depression.  It is clear through this research and analysis that the relationships we see are extraordinarily complex and difficult to understand. However, insights like the one discussed above may help us inform decisions that we make in our daily lives. This information and further research can hopefully help us find a balance. With data driven decisions we can help find the balance between social media, technology, mental health, and productivity that can help us lead happy, fulfilling, and productive lives.
+
+\newpage
+## References 
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+\noindent
+  
+
+Braghieri, Luca, Levy, Ro’ee, and Makarin, Alexey. Data and Code for: Social Media and Mental Health. Nashville, TN: American Economic Association [publisher], 2022. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2022-10-19. https://doi.org/10.3886/E175582V1 
+
+Centers for Disease Control and Prevention. (2024, February 1). CDC - NCHS - National Center for Health Statistics. Antidepressant Use Among Adults: United States, 2015-2018. https://www.cdc.gov/nchs/data/databriefs/db377-tables-508.pdf#page=4 
+
+Google Trends. (n.d.). connected+friends+fellowship+companion. Google Trends. https://trends.google.com/trends/explore?date=2009-01-01%202023-06-30&geo=US&q=connected%2Bfriends%2Bfellowship%2Bcompanion,%22Feel%20connected%20with%20friends%22&hl=en-US  
+
+Google Trends. (n.d.). “Social Media” Depression Term Interest in the US. Google trends. https://trends.google.com/trends/explore?date=2008-09-01%202023-06-15&geo=US&q=%22Social%20Media%22%20depression&hl=en-US  
+
+Google Trends. (n.d.). Vine, Mental Health, Suicide+Depression+Anxious+Anxiety. https://trends.google.com/trends/explore?date=2017-01-10%202017-01-24&geo=US&q=Vine,Mental%20Health,Happy,Suicide%2BDepression%2BAnxiety%2BAnxious  
+
+ 
+
+Howarth, J. (2023, December 4). Alarming average screen time statistics (2024). Exploding Topics. https://explodingtopics.com/blog/screen-time-stats#us-average-screen-time 
+
+ 
+
+
+Sharma, A. (2021, August 28). Monthly active users of Facebook. Kaggle. https://www.kaggle.com/datasets/adityasharmaop/monthly-active-users-of-facebook?resource=download  
+
+Tiktok revenue and Usage Statistics (2023). Business of Apps. (2023, May 3). https://www.businessofapps.com/data/tik-tok-statistics/  
+
+U.S. Bureau of Labor Statistics. (2023, March 23). Tables. U.S. Bureau of Labor Statistics. https://www.bls.gov/productivity/tables/  
+
+ 
+
+Wikimedia Foundation. (2023, June 13). Vine (service). Wikipedia. https://en.wikipedia.org/wiki/Vine_(service)#:~:text=Bought%20by%20Twitter%2C%20Inc.,discontinued%20a%20few%20months%20later.&text=Developer(s)-,Vine%20Labs%2C%20Inc,(Twitter%2C%20Inc.) 
