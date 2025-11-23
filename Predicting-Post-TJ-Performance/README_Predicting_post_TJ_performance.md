@@ -10,35 +10,6 @@ Tommy John surgery is now an inescapable reality in professional baseball, with 
 - **Will a pitcher be durable after Tommy John surgery?**  
   *A classification model predicts whether a pitcher will reach 500 pitches thrown in their return season, answering whether they’ll be a reliable investment.*
 
-### Data
-
-- **Performance metrics:** 71 features for every MLB pitcher (2019–present) from Statcast (baseballsavant.mlb.com).
-- **Surgery/demographics:** 42 features for all MLB-drafted players who have undergone Tommy John surgery in the modern era (from @MLBPlayerAnalysis).
-
-The data is merged and carefully summarized so each pitcher is represented by a pre- and post-surgery record, with appropriate aggregation and realistic target assignments.
-
-### Methods
-
-- **Regression (Predicting XWOBA):**  
-  Three models built, including:
-  - Backwards stepwise regression (with/without demographic data)
-  - Recursive feature elimination
-
-  The recursive feature elimination model performed best on test data, though all suffered from overfitting due to limited sample size (n=91).
-
-- **Classification (Predicting Durability):**  
-  Grid search cross-validation compared logistic regression, random forest, decision tree, bagging, boosting, and gradient boosting.
-  - Gradient boosting showed the highest accuracy (63%) predicting pitchers who would throw ≥500 pitches in their return season.
-
-### Key Findings
-
-- **Performance:**  
-  Pitchers average a statistically significant increase in XWOBA after Tommy John surgery (p=0.01), meaning they suppress fewer opponent runs. No significant difference was found in average pitches thrown (p=0.56).
-- **Model Utility:**  
-  The regression and classification models provide insights to front offices for contract and trade decision-making. However, overfitting and bias (especially toward false positives in durability prediction) should be considered before full-scale adoption.
-
-- **Ethical Implications:**  
-  While models are built with public data, inclusion of demographics (e.g. high school, hometown) could enable unintended bias or discrimination. Such features were not selected in the final models, but this risk increases with dataset expansion.
 
 ## Getting Started
 
